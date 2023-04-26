@@ -27,7 +27,7 @@ export default{
             title: 'Em Alta',
             items: await basicFetch(`/movie/top_rated?language=pt-BR&api_key${API_KEY}`)
         },
-        {
+        /*{
             slug: 'action',
             title: 'Ação',
             items: await basicFetch(`/discover/movie?with_genres=28&language=pt-BR&api_key${API_KEY}`)
@@ -55,7 +55,7 @@ export default{
             slug: 'Documentário',
             title: 'Documentário',
             items: await basicFetch(`/discover/movie?with_genres=99&language=pt-BR&api_key${API_KEY}`)
-        },
+        }*/
         
             
         ]
