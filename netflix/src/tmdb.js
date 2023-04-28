@@ -34,12 +34,12 @@ export default {
             },
             {
                 slug: 'top rated',
-                titulo: 'em Alta',
+                titulo: 'Em Alta',
                 itens: await basicFetch(`/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}`)
             },
             {
                 slug: 'ação',
-                titulo: 'ação',
+                titulo: 'Ação',
                 itens: await basicFetch(`/discover/movie?with_genres=28&language=pt-BR&api_key=${API_KEY}`)
             },
             {
