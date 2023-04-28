@@ -1,5 +1,5 @@
-const API_KEY ='e979be503062924f3a1eb1fc8c60f59a';
-const API_BASE ='https://api.themoviedb.org/3';
+const API_KEY = 'e979be503062924f3a1eb1fc8c60f59a';
+const API_BASE = 'https://api.themoviedb.org/3';
 /*
 -originais
 -topRated
@@ -9,37 +9,38 @@ const API_BASE ='https://api.themoviedb.org/3';
 -romance-documentario
 */
 
-const basicFetch = async (endpoint)=>{
-    const req= await fetch(`${API_BASE}${endpoint}`)
-    const json = await req.json()
-    return json
+const basicFetch = async (endpoint) => {
+    const req = await fetch(`${API_BASE}${endpoint}`);
+    const json = await req.json();
+    return json;
 }
 
 
 
-export default{
+export default {
 
-    getHomeList: async ()=>{
-        return[
+    getHomeList: async () => {
+        return [
             {
                 slug: 'originals',
                 titulo: 'Originais do Netflix',
-                itens: await basicFetch(`https://api.themoviedb.org/3/movie/76341?language=pt-BR&api_key=${API_KEY}`)
+                itens: await basicFetch(`/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}`)
             },
-           /*   {
-                slug: 'top rated',
-                titulo: 'Mais Visto',
-                itens: await basicFetch(`/discover/tv?with_network=213&language=pt-BR`)
-            },
-          {
+
+            {
                 slug: 'Recomendados',
                 titulo: 'Recomendados para voce',
-                itens: await basicFetch(`/trending/all/week?language=pt-BR&api_key${API_KEY}`)
+                itens: await basicFetch(`/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}`)
+            },
+            {
+                slug: 'top rated',
+                titulo: 'em Alta',
+                itens: await basicFetch(`/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}`)
             },
             {
                 slug: 'ação',
                 titulo: 'ação',
-                itens: await basicFetch(`/movie/top_rated?language=pt-BR&api_key${API_KEY}`)
+                itens: await basicFetch(`/discover/movie?with_genres=28&language=pt-BR&api_key=${API_KEY}`)
             },
             {
                 slug: 'Comedia',
@@ -60,8 +61,8 @@ export default{
                 slug: 'Documentario',
                 titulo: 'Documentario',
                 itens: await basicFetch(`/discover/movie?with_genres=99&language=pt-BR&api_key=${API_KEY}`)
-            }*/
-            
+            }
+
         ]
     }
 }
