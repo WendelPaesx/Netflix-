@@ -22,15 +22,15 @@ export default {
     getHomeList: async () => {
         return [
             {
-                slug: 'originals',
-                titulo: 'Originais do Netflix',
-                itens: await basicFetch(`/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}`)
+                slug: 'Aventura',
+                titulo: 'Aventura',
+                itens: await basicFetch(`/discover/movie?with_genres=12&language=pt-BR&api_key=${API_KEY}`)
             },
 
             {
                 slug: 'Recomendados',
-                titulo: 'Recomendados para voce',
-                itens: await basicFetch(`/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}`)
+                titulo: 'Ficção Científica',
+                itens: await basicFetch(`/discover/movie?with_genres=878&language=pt-BR&api_key=${API_KEY}`)
             },
             {
                 slug: 'top rated',
@@ -38,7 +38,7 @@ export default {
                 itens: await basicFetch(`/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}`)
             },
             {
-                slug: 'ação',
+                slug: 'acao',
                 titulo: 'Ação',
                 itens: await basicFetch(`/discover/movie?with_genres=28&language=pt-BR&api_key=${API_KEY}`)
             },
@@ -64,5 +64,30 @@ export default {
             }
 
         ]
+    },
+    getInfoFilme: async (movieId, type) => {
+        let info = {}
+
+        if (movieId) {
+            switch (type) {
+                case 'movie':
+                    info = await basicFetch(`/movie/${movieId}?language=pt-BR&api_key=${API_KEY}`)
+
+
+                    break
+
+                case 'tv':
+                    info = await basicFetch(`/tv/${movieId}?language=pt-BR&api_key=${API_KEY}`)
+
+
+                    break;
+                default:
+                    info = null
+                    break
+            }
+        }
+
+        return info
+
     }
 }
