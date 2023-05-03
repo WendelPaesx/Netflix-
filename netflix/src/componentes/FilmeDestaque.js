@@ -27,7 +27,7 @@ export default ({ item }) => {
                     <div className='featured-info'>
                         <div className='featured--pontos'>{item.vote_average} pontos</div>
                         <div className='featured--ano'>{lancamento.getFullYear()}</div>
-                        <div className='featured--linguas'>{linguas.join('│ ' )}</div>
+                        <div className='featured--linguas'>{linguas.join(' │ ' )}</div>
                         
                     </div>
                     <div className='featured--descricao'>{item.overview}</div>
