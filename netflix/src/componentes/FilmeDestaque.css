@@ -1,13 +1,92 @@
-.featured{
+.featured {
     height: 100vh;
 }
-.featured--vertical{
+
+.featured--vertical {
     width: inherit;
     height: inherit;
-    background: linear-gradient(to top,#111 8%, transparent 92%);
+    background: linear-gradient(to top, #111 8%, transparent 92%);
 }
-.featured--horizontal{
+
+.featured--horizontal {
     width: inherit;
     height: inherit;
-    background: linear-gradient(to right,#111 25%,transparent 75%);
+    background: linear-gradient(to right, #111 15%, transparent 65%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    padding-bottom: 60px;
+}
+
+.featured--nome {
+    font-size: 60px;
+    font-weight: bold;
+    max-width: 50%;
+}
+
+.featured--info {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+
+}
+
+.featured--pontos,
+.featured--ano,
+.featured--linguas {
+    display: inline-block;
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.featured--pontos {
+    color: #46d369;
+    
+}
+
+.featured--descricao{
+    margin-top: 15px;
+    font-size: 20px;
+    color: #999;
+    padding-left: 10px;
+    max-width: 40%;
+    margin-bottom: 15px;
+}
+.featured--botoes{
+    margin-top: 15px;
+}
+.featured--botaoassisir,.featured--botaominhalista{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+    opacity: 1;
+    transition: all ease 0.2s;
+
+
+
+}
+.featured--botaoassisir:hover,.featured--botaominhalista:hover{
+    opacity: 0.7;
+    
+
+}
+.featured--botaoassisir{
+    background-color: #fff;
+    color: #000;
+}
+.featured--botaominhalista{
+    background-color: #333;
+    color: #fff;
+}
+.featured--genero{
+    margin-top: 20px;
+    font-size: 18px;
+    color: #999;
+
 }

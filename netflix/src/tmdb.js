@@ -33,7 +33,7 @@ export default {
                 itens: await basicFetch(`/discover/movie?with_genres=878&language=pt-BR&api_key=${API_KEY}`)
             },
             {
-                slug: 'top rated',
+                slug: 'em alta',
                 titulo: 'Em Alta',
                 itens: await basicFetch(`/discover/movie?with_network=213&language=pt-BR&api_key=${API_KEY}`)
             },

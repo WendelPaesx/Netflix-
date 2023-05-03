@@ -18,7 +18,7 @@ export default () => {
             setMovieList(lista)
 
             //pegando o filme destaque
-            let acao = lista.filter(i => i.slug === 'acao')
+            let acao = lista.filter(i => i.slug === 'em alta')
             let sorteio = Math.floor(Math.random() * (acao[0].itens.results.length - 1))
             let escolhido = acao[0].itens.results[sorteio]
             let infoEscolhido = await tmdb.getInfoFilme(escolhido.id, 'movie')

@@ -3,6 +3,17 @@ import React from 'react'
 
 export default ({ item }) => {
     console.log(item)
+
+    let lancamento =new Date(item.release_date)
+
+    let genero=[]
+    for(let i in item.genres){
+        genero.push(item.genres[i].name)
+    }
+    let linguas=[]
+    for(let i in item.spoken_languages){
+        linguas.push(item.spoken_languages[i].name)
+    }
     return (
         <section className='featured' style={{
             backgroundSize: 'cover',
@@ -12,12 +23,22 @@ export default ({ item }) => {
 
             <div className='featured--vertical'>
                 <div className='featured--horizontal'>
-                    <div className='featured--name'>{item.original_title}</div>
+                    <div className='featured--nome'>{item.original_title}</div>
                     <div className='featured-info'>
                         <div className='featured--pontos'>{item.vote_average} pontos</div>
-                        <div className='featured--ano'>{item.release_date}</div>
-                        <div className='featured--intro'>{item.overview}</div>
+                        <div className='featured--ano'>{lancamento.getFullYear()}</div>
+                        <div className='featured--linguas'>{linguas.join('│ ' )}</div>
+                        
                     </div>
+                    <div className='featured--descricao'>{item.overview}</div>
+                    <div className='featured--botoes'>
+                        <a href={`/watch/${item.id}`} className='featured--botaoassisir'>► Assistir</a>
+                        <a href={`/lista/add/${item.id}`} className='featured--botaominhalista'>+ Minha Lista</a>
+
+                    </div>
+                    <div className='featured--genero'><strong>Generos:</strong>{genero.join(', ')}</div>
+
+                    
 
                 </div>
             </div>
