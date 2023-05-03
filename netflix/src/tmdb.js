@@ -35,7 +35,7 @@ export default {
             {
                 slug: 'top rated',
                 titulo: 'Em Alta',
-                itens: await basicFetch(`/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}`)
+                itens: await basicFetch(`/discover/movie?with_network=213&language=pt-BR&api_key=${API_KEY}`)
             },
             {
                 slug: 'acao',
@@ -65,25 +65,25 @@ export default {
 
         ]
     },
-    getInfoFilme: async (movieId, type) => {
+    getInfoFilme: async (idFilme, type) => {
         let info = {}
 
-        if (movieId) {
+        if (idFilme) {
             switch (type) {
                 case 'movie':
-                    info = await basicFetch(`/movie/${movieId}?language=pt-BR&api_key=${API_KEY}`)
+                    info = await basicFetch(`/movie/${idFilme}?language=pt-BR&api_key=${API_KEY}`)
 
 
-                    break
+                    break;
 
                 case 'tv':
-                    info = await basicFetch(`/tv/${movieId}?language=pt-BR&api_key=${API_KEY}`)
+                    info = await basicFetch(`/tv/${idFilme}?language=pt-BR&api_key=${API_KEY}`)
 
 
                     break;
                 default:
                     info = null
-                    break
+                    break;
             }
         }
 
