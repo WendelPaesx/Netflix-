@@ -21,16 +21,17 @@ export default {
 
     getHomeList: async () => {
         return [
-            {
-                slug: 'Aventura',
-                titulo: 'Aventura',
-                itens: await basicFetch(`/discover/movie?with_genres=12&language=pt-BR&api_key=${API_KEY}`)
-            },
+            
 
             {
                 slug: 'Recomendados',
                 titulo: 'Ficção Científica',
                 itens: await basicFetch(`/discover/movie?with_genres=878&language=pt-BR&api_key=${API_KEY}`)
+            },
+            {
+                slug: 'Aventura',
+                titulo: 'Aventura',
+                itens: await basicFetch(`/discover/movie?with_genres=12&language=pt-BR&api_key=${API_KEY}`)
             },
             {
                 slug: 'em alta',
@@ -61,7 +62,32 @@ export default {
                 slug: 'Documentario',
                 titulo: 'Documentario',
                 itens: await basicFetch(`/discover/movie?with_genres=99&language=pt-BR&api_key=${API_KEY}`)
+            },
+            
+            {
+                slug: 'Crimes',
+                titulo: 'Crimes',
+                itens: await basicFetch(`/discover/movie?with_genres=80&language=pt-BR&api_key=${API_KEY}`)
+            },
+            
+            {
+                slug: 'Drama',
+                titulo: 'Drama',
+                itens: await basicFetch(`/discover/movie?with_genres=28&language=pt-BR&api_key=${API_KEY}`)
+            },
+            
+            {
+                slug: 'Fantasia',
+                titulo: 'Fantasia',
+                itens: await basicFetch(`/discover/movie?with_genres=14&language=pt-BR&api_key=${API_KEY}`)
+            },
+            
+            {
+                slug: 'Familia',
+                titulo: 'Familia',
+                itens: await basicFetch(`/discover/movie?with_genres=10751&language=pt-BR&api_key=${API_KEY}`)
             }
+        
 
         ]
     },

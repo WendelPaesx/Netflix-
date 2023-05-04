@@ -35,20 +35,24 @@ export default () => {
     }, []);
 
     useEffect(() => {
-        const ScrollListener = () => {
+        const scrollListener = () => {
             if (window.scrollY > 10) {
                 setBlackHeader(true)
+
             } else {
-                
+                setBlackHeader(false)
+
+
             }
 
 
         }
 
-        window.addEventListener('scroll', ScrollListener)
+        window.addEventListener('scroll', scrollListener)
 
         return () => {
-            window.removeEventListener('scroll', ScrollListener)
+            window.removeEventListener('scroll', scrollListener)
+            console.log('scrolou');
         }
 
     }, [])
