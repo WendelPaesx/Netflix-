@@ -87,6 +87,11 @@ export default () => {
 
                 ))}
             </section>
+
+            <footer>
+                <p>Desenvolvido por <a href="https://github.com/wendelpaesx" target="blank">Wendel Paes</a></p>
+                
+            </footer>
         </div>
     )
 }
