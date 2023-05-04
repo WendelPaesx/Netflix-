@@ -1,14 +1,16 @@
 import tmdb from "./tmdb";
 import React, { useEffect, useState } from "react"
-import LinhaDeFilmes from "./componentes/LinhaDeFilmes";
+import LinhaDeFilmes from "./componentes/Listas";
 import './App.css'
-import FilmeDestaque from "./componentes/FilmeDestaque";
+import FilmeDestaque from "./componentes/Destaque";
+import Header from "./componentes/Header";
 
 
 export default () => {
 
     const [movieList, setMovieList] = useState([])
     const [dadosDestaque, setDadosDestaque] = useState(null)
+    const [blackHeader, setBlackHeader] = useState(false)
 
 
     useEffect(() => {
@@ -31,8 +33,33 @@ export default () => {
         }
         carregaTudo()
     }, []);
+
+    useEffect(() => {
+        const ScrollListener = () => {
+            if (window.scrollY > 10) {
+                setBlackHeader(true)
+            } else {
+                
+            }
+
+
+        }
+
+        window.addEventListener('scroll', ScrollListener)
+
+        return () => {
+            window.removeEventListener('scroll', ScrollListener)
+        }
+
+    }, [])
     return (
         <div className="page">
+
+
+            <Header
+                black={blackHeader} />
+
+
 
             {dadosDestaque &&
                 <FilmeDestaque
