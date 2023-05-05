@@ -89,7 +89,7 @@ export default () => {
             </section>
 
             <footer>
-                <p>Desenvolvido por <a href="https://github.com/wendelpaesx" target="blank">Wendel Paes</a></p>
+                <p>Desenvolvido por <a href="https://github.com/wendelpaesx" target="blank"><strong>Wendel Paes</strong>.</a></p>
                 
             </footer>
         </div>
