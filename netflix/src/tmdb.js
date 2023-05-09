@@ -24,7 +24,7 @@ export default {
             
 
             {
-                slug: 'Recomendados',
+                slug: 'ficcao cientifica',
                 titulo: 'Ficção Científica',
                 itens: await basicFetch(`/discover/movie?with_genres=878&language=pt-BR&api_key=${API_KEY}`)
             },
