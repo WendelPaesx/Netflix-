@@ -1,7 +1,6 @@
 import React from "react";
 import './linhaDeFilmes.css'
-import ArrowRight from '@mui/icons-material/ArrowRight';
-import ArrowLeft from '@mui/icons-material/ArrowLeft';
+
 
 
 
@@ -12,10 +11,15 @@ export default ({ titulo, itens }) => {
     return (
         <div className="movieRow" >
             <h2>{titulo}</h2>
-            <div>
-                <ArrowRight/>
-                <ArrowLeft/>
+            <div className="movieRowLeft">
+            ﴾
             </div>
+            <div className="movieRowRight">
+            ﴿
+
+            </div>
+
+            
               
            
 
