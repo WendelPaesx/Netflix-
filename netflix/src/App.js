@@ -58,7 +58,7 @@ export default () => {
     }, [])
     return (
         <div className="page">
-           
+
 
 
             <Header
@@ -81,7 +81,7 @@ export default () => {
                         key={key}
                         titulo={item.titulo}
                         itens={item.itens}
-                        
+
 
                     />
 
@@ -92,8 +92,14 @@ export default () => {
 
             <footer>
                 <p>Desenvolvido por <a href="https://github.com/wendelpaesx" target="blank"><strong>Wendel Paes</strong>.</a></p>
-                
+
             </footer>
+            {movieList.length <= 0 &&
+
+                <div className="loading">
+                    <img src="https://i.gifer.com/XOsX.gif" alt="Carregando" />
+                </div>
+            }
         </div>
     )
 }
