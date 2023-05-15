@@ -26,8 +26,7 @@ export default () => {
             let infoEscolhido = await tmdb.getInfoFilme(escolhido.id, 'movie')
 
             setDadosDestaque(infoEscolhido)
-            console.log(infoEscolhido);
-            console.log(infoEscolhido.overview);
+            
 
 
         }
@@ -52,7 +51,7 @@ export default () => {
 
         return () => {
             window.removeEventListener('scroll', scrollListener)
-            console.log('scrolou');
+            
         }
 
     }, [])
