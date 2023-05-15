@@ -2,7 +2,7 @@ import './FilmeDestaque.css'
 import React from 'react'
 
 export default ({ item }) => {
-    console.log(item)
+    
 
     let lancamento =new Date(item.release_date)
 
